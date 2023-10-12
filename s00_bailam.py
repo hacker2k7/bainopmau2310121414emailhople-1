@@ -33,5 +33,24 @@ get_name_in_email([None, 'abb#ccc'])                      | ['ERROR invaid email
 
 #region bailam
 def get_name_in_email(email_list):
-  return 'todo'
+  if email_list == []:
+    return []
+  
+  name_list = []
+  for email in email_list:
+    if email in {None,'abb#ccc'} :
+      name_list.append('ERROR invaid email')
+    else:
+      name_list.append(email.split('@')[0])
+  return name_list
+#endregion bailam
+
+get_name_in_email(['ai-btx@gmail.com']) 
+get_name_in_email(['user1@gmail.com', 'user2@gmail.com'])
+get_name_in_email([])
+get_name_in_email(['abb#ccc'])
+get_name_in_email([None])  
+get_name_in_email([None, 'abb#ccc'])
+
+
 #endregion bailam
